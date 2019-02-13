@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var OlaMundo = /** @class */ (function () {
-    function OlaMundo() {
+var olamundo_1 = require("./olamundo");
+var perguntas_1 = require("./perguntas");
+exports.Perguntas = perguntas_1.Perguntas;
+new olamundo_1.OlaMundo().run();
+new perguntas_1.Perguntas().facaUmaPergunta();
+var Perguntas = /** @class */ (function () {
+    function Perguntas() {
     }
-    OlaMundo.prototype.run = function () {
-        console.log('Olá mundo');
-    };
-    return OlaMundo;
+    return Perguntas;
 }());
-exports.OlaMundo = OlaMundo;
-new OlaMundo().run();
+exports.Perguntas = Perguntas;
+(function () { });
