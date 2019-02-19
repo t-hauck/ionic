@@ -1,5 +1,6 @@
 import {OlaMundo} from './olamundo';
-import {Perguntas} from './perguntas';
+import {pizza} from './perguntas';
+//import {Delivery} from './delivery';
 
 new OlaMundo().run();
-new Perguntas().facaUmaPergunta();
+new pizza().pizza();

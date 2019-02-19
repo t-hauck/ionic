@@ -4,7 +4,7 @@ var OlaMundo = /** @class */ (function () {
     function OlaMundo() {
     }
     OlaMundo.prototype.run = function () {
-        console.log('Ola Mundo');
+        console.log('');
     };
     return OlaMundo;
 }());
