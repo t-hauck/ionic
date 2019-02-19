@@ -8,6 +8,11 @@ var pizza = /** @class */ (function () {
     pizza.prototype.pizza = function () {
         inquirer_1.prompt([
             {
+                name: 'nome',
+                type: 'list',
+                message: 'Qual seu nome?',
+            },
+            {
                 name: 'sabor',
                 type: 'list',
                 message: 'Olá, qual sabor de pizza você deseja?',

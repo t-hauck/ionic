@@ -5,6 +5,18 @@ export class pizza {
 	public pizza(){
 		prompt([
 			{
+				name: 'nome',
+				type: 'input',
+				message: 'Qual seu nome?',
+			},
+			{
+				name: 'telefone',
+				type: 'inputt',
+				message: 'Telefone?',
+			},
+			
+
+			{
 				name: 'sabor',
 				type: 'list',
 				message: 'Olá, qual sabor de pizza você deseja?',
