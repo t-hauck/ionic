@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding align="center">
+  <h3>Ionic Menu Starter</h3>
+  
+  <button ion-button primary (click)="adicionarAlunos()">Carregar Alunos</button>
+  <button ion-button primary (click)="buttonClick()">Esconder</button>
+  <button ion-button primary (click)="limparAlunos()">Limpar</button>
+  <button ion-button primary (click)="showMessage()">Mostrar Mensagem</button>
+  <button ion-button primary (click)="showToast()">Mostrar Toast</button>
+  
+  <button ion-button primary (click)="LoginPage()">Login</button>
+
+
+ <div *ngIf="exibirConteudo">
+   <ion-list>
+     <ion-item *ngFor="let aluno of listaAlunos">
+        {{aluno.nome}}
+     </ion-item>
+   </ion-list>
+ </div>
+
+</ion-content>
