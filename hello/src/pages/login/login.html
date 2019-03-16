@@ -12,17 +12,18 @@
     <ion-list>
       <ion-item>
         <ion-label color="primary" stacked>Usuário</ion-label>
-        <ion-input type="email" [(ngModel)]="nomeLogin" name="nome" placeholder="Digite seu nome de usuário"></ion-input>
+        <ion-input type="email" [(ngModel)]="login" name="nome" placeholder="Seu nome de usuário"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" stacked>Senha</ion-label>
-        <ion-input type="password" [(ngModel)]="nomeSenha" name="senha" placeholder="Digite sua senha"></ion-input>
+        <ion-input type="password" [(ngModel)]="senha" name="senha" placeholder="Sua senha"></ion-input>
       </ion-item>
     </ion-list>
       <button ion-button primary (click)="logForm()">Entrar</button>
       
       <!--
       <button ion-button primary (click)="showMessage()">Loading</button>
-      <button ion-button primary (click)="showToast()">Toast</button> -->
+      <button ion-button primary (click)="showToast()">Toast</button>
+    -->
   </form>
 </ion-content>

@@ -8,6 +8,7 @@ import { LoginPage} from '../login/login';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
   public listaAlunos = [];
@@ -15,13 +16,9 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private messages : Messages, private toast: Toast) {}
 
-  LoginPage(){ /*
-    public LoginPage(){
-    Vai abrir a tela desejada, onde a mesma deve ser importada, assim, vou achamar a LoginPage */
+  LoginPage(){ // public LoginPage(){
     this.navCtrl.push(LoginPage);
   }
-  public nome : string;
-  public senha : any;
 
   public exibirToast(){
     this.toast.loadingShow();

@@ -12,25 +12,14 @@ export class LoginPage {
   public listNomes = [];
   public nome : string = '';
   public exibirConteudo : boolean = true;
-  public nomeLogin: string;
-  public nomeSenha: string;
+  public login: string;
+  public senha: string;
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, private message : Messages, private toast : Toast) { }
-  
-  /*
-  public adicionarNomes() {
-	  if (this.nomeLogin.trim()) {
-		  this.listNomes.push({nome: this.nomeLogin});
-		  
-		  this.presentAlert();
-		  this.nomeLogin = '';
-		  }
-		  }
-  */
  
   logForm(){
     debugger
-    if(this.nomeLogin === "hauck" && this.nomeSenha === "hauck"){
+    if(this.login === "hauck" && this.senha === "hauck"){
       this.navCtrl.push(PaginaPage);
     } else{
       this.toast.presentToast("Usuário ou senha incorreta, verifique suas credenciais de acesso.");
@@ -40,7 +29,7 @@ export class LoginPage {
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'Sucesso!',
-      subTitle: ` <b>${this.nomeLogin}</b> Seja bem vindo!`,
+      subTitle: ` <b>${this.login}</b> Seja bem vindo!`,
       buttons: ['OK']
     });
     alert.present();
