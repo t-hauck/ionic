@@ -6,7 +6,7 @@ import { Toast } from '../../providers/toast';
 import { PaginaPage } from '../pagina/pagina';
 @Component({ 
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'login.html'
 })
 export class LoginPage {
   public listNomes = [];
@@ -16,23 +16,24 @@ export class LoginPage {
   public nomeSenha: string;
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, private message : Messages, private toast : Toast) { }
-
-  // public adicionarNomes() {
-  //   if (this.nomeLogin.trim()) {
-  //     this.listNomes.push({nome: this.nomeLogin});
-      
-  //     this.presentAlert();
-
-  //     this.nomeLogin = '';
-  //   }
-  // }
+  
+  /*
+  public adicionarNomes() {
+	  if (this.nomeLogin.trim()) {
+		  this.listNomes.push({nome: this.nomeLogin});
+		  
+		  this.presentAlert();
+		  this.nomeLogin = '';
+		  }
+		  }
+  */
  
   logForm(){
     debugger
     if(this.nomeLogin === "hauck" && this.nomeSenha === "hauck"){
       this.navCtrl.push(PaginaPage);
-    }else{
-      this.toast.presentToast("Usuário ou Senha incorreta, verifique suas credenciais", 5000);
+    } else{
+      this.toast.presentToast("Sinto muito. Usuário ou senha incorreta, verifique suas credenciais de acesso.");
     }
   }
 
@@ -48,8 +49,8 @@ showMessage(){
     this.message.loadingShow();
   }
 
-  showToast(){
-    this.toast.presentToast("");
+  exibirToast(){
+    this.toast.presentToast("Toast");
   }
 
 }

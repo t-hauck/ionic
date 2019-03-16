@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,17 +11,18 @@
   <form (ngSubmit)="logForm()">
     <ion-list>
       <ion-item>
-        <ion-label color="primary" stacked>Nome</ion-label>
-        <ion-input type="email" [(ngModel)]="nomeLogin" name="nome" placeholder="Insira seu usuario"></ion-input>
+        <ion-label color="primary" stacked>Usuário</ion-label>
+        <ion-input type="email" [(ngModel)]="nomeLogin" name="nome" placeholder="Digite seu nome de usuário"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" stacked>Senha</ion-label>
-        <ion-input type="password" [(ngModel)]="nomeSenha" name="senha" placeholder="Insira sua senha"></ion-input>
+        <ion-input type="password" [(ngModel)]="nomeSenha" name="senha" placeholder="Digite sua senha"></ion-input>
       </ion-item>
     </ion-list>
       <button ion-button primary (click)="logForm()">Entrar</button>
+      
+      <!--
       <button ion-button primary (click)="showMessage()">Loading</button>
-      <button ion-button primary (click)="showToast()">Toast</button>
+      <button ion-button primary (click)="showToast()">Toast</button> -->
   </form>
 </ion-content>
-

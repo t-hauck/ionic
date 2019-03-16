@@ -3,20 +3,21 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Ionic</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding align="center">
-  <h3>Ionic Menu Starter</h3>
+  <!-- <h3>Ionic Menu Starter</h3> -->
+    <br>
   
   <button ion-button primary (click)="adicionarAlunos()">Carregar Alunos</button>
   <button ion-button primary (click)="buttonClick()">Esconder</button>
-  <button ion-button primary (click)="limparAlunos()">Limpar</button>
+  <button ion-button primary (click)="limparAlunos()">Limpar</button> <br> 
   <button ion-button primary (click)="showMessage()">Mostrar Mensagem</button>
-  <button ion-button primary (click)="showToast()">Mostrar Toast</button>
+  <button ion-button primary (click)="exibirToast()">Mostrar Toast</button>
   
-  <button ion-button primary (click)="LoginPage()">Login</button>
+  <button ion-button primary (click)="LoginPage()">Efetuar Login</button>
 
 
  <div *ngIf="exibirConteudo">
