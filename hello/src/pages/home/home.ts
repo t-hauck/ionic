@@ -20,12 +20,12 @@ export class HomePage {
     Vai abrir a tela desejada, onde a mesma deve ser importada, assim, vou achamar a LoginPage */
     this.navCtrl.push(LoginPage);
   }
+  public nome : string;
+  public senha : any;
 
-/*
- public exibirToast(){
-  this.toast.show("Toast!", 10000);
- } */
- 
+  public exibirToast(){
+    this.toast.loadingShow();
+  }
 
   public showMessage(){
     this.messages.loadingShow();
@@ -45,13 +45,5 @@ export class HomePage {
 
   buttonClick(){
     this.exibirConteudo = !this.exibirConteudo;
-	
-	/*
-    if (this.exibirConteudo === true){
-      this.exibirConteudo = false;
-    } else {
-      this.exibirConteudo = true;
-    }
-	*/
   }
 }

@@ -33,7 +33,7 @@ export class LoginPage {
     if(this.nomeLogin === "hauck" && this.nomeSenha === "hauck"){
       this.navCtrl.push(PaginaPage);
     } else{
-      this.toast.presentToast("Sinto muito. Usuário ou senha incorreta, verifique suas credenciais de acesso.");
+      this.toast.presentToast("Usuário ou senha incorreta, verifique suas credenciais de acesso.");
     }
   }
 
@@ -48,6 +48,7 @@ export class LoginPage {
 showMessage(){
     this.message.loadingShow();
   }
+  
 
   exibirToast(){
     this.toast.presentToast("Toast");
