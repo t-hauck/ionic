@@ -7,18 +7,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding align="center">
-  <!-- <h3>Ionic Menu Starter</h3> -->
+<ion-content padding>
     <br>
   
   <button ion-button primary (click)="adicionarAlunos()">Carregar Alunos</button>
   <button ion-button primary (click)="buttonClick()">Esconder</button>
-  <button ion-button primary (click)="limparAlunos()">Limpar</button> <br> 
+  <button ion-button primary (click)="limparAlunos()">Limpar</button>
   <button ion-button primary (click)="showMessage()">Mostrar Mensagem</button>
   <button ion-button primary (click)="exibirToast()">Mostrar Toast</button>
-  
   <button ion-button primary (click)="LoginPage()">Efetuar Login</button>
-
 
  <div *ngIf="exibirConteudo">
    <ion-list>

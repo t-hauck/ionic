@@ -13,6 +13,8 @@ import { Toast } from '../providers/toast';
 
 import { PaginaPage } from '../pages/pagina/pagina';
 import { LoginPage } from '../pages/login/login';
+import { LoginProvider } from '../providers/login/login';
+import { HttpProvider } from '../providers/http/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { LoginPage } from '../pages/login/login';
     SplashScreen,
     Messages,
     Toast,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginProvider,
+    HttpProvider
   ]
 })
 export class AppModule {}

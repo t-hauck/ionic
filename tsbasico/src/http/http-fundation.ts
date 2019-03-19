@@ -9,7 +9,7 @@ export class HttpFundation {
             url : url,
             method : method,
             headers : headers,
-            proxy: { host: 'wpad.sc.senai.br', port: 3128 }
+         // proxy: { host: 'wpad.sc.senai.br', port: 3128 }
           
         };      
         
