@@ -38,7 +38,6 @@ showMessage(){
     this.message.loadingShow();
   }
   
-
   exibirToast(){
     this.toast.presentToast("Toast");
   }
