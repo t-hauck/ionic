@@ -42,10 +42,10 @@ public PegarCidade(){
 }
 
  public CityClick(){
-   this.listBairos(); // ARQUIVO ALTERATO -> listarBairros
+   this.listBairos();
  }
 
- public listBairos(){ // ARQUIVO ALTERATO -> listarBairros
+ public listBairos(){
    this.PegarBairro().subscribe(
      (resultado : any) =>{
        this.listBairros = resultado;

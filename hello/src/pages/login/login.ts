@@ -4,6 +4,7 @@ import { Messages} from '../../providers/messages';
 import { Toast } from '../../providers/toast'; 
 import { HttpProvider } from '../../providers/http/http';
 import { PizzaPage } from '../pizza/pizza';
+import { HomePage} from '../home/home';
 
 @Component({
   selector: 'page-home',

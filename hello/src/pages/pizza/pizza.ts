@@ -11,7 +11,7 @@ import { EntregaPage } from '../entrega/entrega';
 })
 
 export class PizzaPage {
-  public exibirconteudo : boolean = true;
+  public ExibirDados : boolean = true;
   public ListaTamanhos = [];
   public ListaSaboresPrecos = [];
   idProduto : string;
@@ -34,14 +34,14 @@ export class PizzaPage {
 
   click(){
     this.sabores(this.idProduto).subscribe(
-      (saboreando : any) => {
-        this.ListaSaboresPrecos = saboreando;
+      (comida : any) => {
+        this.ListaSaboresPrecos = comida;
       }
     )
   }
 
   buttonclick(){
-    this.exibirconteudo = !this.exibirconteudo;
+    this.ExibirDados = !this.ExibirDados;
   }
 
   public tamanho (){
@@ -50,11 +50,11 @@ export class PizzaPage {
   }
 
   public sabores(IdSabor : string){
-    this.httpProvider.url = this.url + 'sabores' + IdSabor;
+    this.httpProvider.url = this.url + 'sabores/' + IdSabor;
     return this.httpProvider.get();
   }
 
-  private dadosEntrega() {
+  public dadosEntrega() {
     this.navCtrl.push(EntregaPage);
   }
 }

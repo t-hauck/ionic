@@ -7,7 +7,7 @@
 <ion-content padding>
   <button ion-button primary (click)="buttonclick()">Recolher</button>
 
-  <div *ngIf="exibirconteudo" >
+  <div *ngIf="ExibirDados">
     <ion-list>
       <ion-item >
 
@@ -19,7 +19,8 @@
       </ion-item>
     </ion-list>
      <ion-list>
-      <ion-item *ngFor="let Sabores of ListaSaboresPrecos">{{Sabores.sabor}} <ion-note item-end color="dark"></ion-note>
+      <ion-item *ngFor="let Sabores of ListaSaboresPrecos">
+          {{Sabores.sabor}}               <ion-note item-end color="dark">  R$: {{Sabores.preco}},00</ion-note>
 
       </ion-item>
     </ion-list>
