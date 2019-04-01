@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Messages } from '../../providers/messages';
 import { Toast } from '../../providers/toast';
+import { PizzaPage } from '../pizza/pizza';
 import { LoginPage} from '../login/login';
 
 @Component({
@@ -14,10 +15,18 @@ export class HomePage {
   public listaAlunos = [];
   public exibirConteudo : boolean = true;
 
-  constructor(public navCtrl: NavController, private messages : Messages, private toast: Toast) {}
+  constructor(
+    public navCtrl: NavController,
+    private messages : Messages,
+    private toast: Toast ){} /*,
+    private PizzaPage : PizzaPage) {} */
 
   LoginPage(){ // public LoginPage(){
     this.navCtrl.push(LoginPage);
+  }
+
+  public pizzaria() {
+    this.navCtrl.push(PizzaPage);
   }
 
   public exibirToast(){

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Dados da entrega</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-label>Cidade</ion-label>
+        <ion-select [(ngModel)]="city" (ionChange)="CityClick()">
+          <ion-option value="{{city.id}}" *ngFor="let city of listaCidades">{{city.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+        <ion-item>
+          <ion-label>Bairro</ion-label>
+          <ion-select [(ngModel)]="neighborhood" (ionChange)="ClickText()">
+            <ion-option  *ngFor="let b of listaBairros">{{b.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+  </ion-list>
+
+      <div padding *ngIf="TextField">
+      <ion-list >
+
+          <ion-item>
+            <ion-label fixed>Rua</ion-label>
+            <ion-input type="text" ></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label fixed>Número</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>Complemento</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label fixed>Referência</ion-label>
+              <ion-input type="text"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+        <button ion-button primary (click)="reset()">Apagar</button>
+      </div>
+</ion-content>

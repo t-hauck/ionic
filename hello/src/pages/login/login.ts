@@ -1,45 +1,62 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Messages} from '../../providers/messages';
-import { Toast } from '../../providers/toast';
-import { PaginaPage } from '../pagina/pagina';
-@Component({ 
+import { Toast } from '../../providers/toast'; 
+import { HttpProvider } from '../../providers/http/http';
+import { PizzaPage } from '../pizza/pizza';
+
+@Component({
   selector: 'page-home',
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  public listNomes = [];
-  public nome : string = '';
-  public exibirConteudo : boolean = true;
-  public login: string;
-  public senha: string;
+  exibirConteudo : boolean = true;
+  listNomes = [];
+  user : string;
+  pass : string;
 
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private message : Messages, private toast : Toast) { }
- 
-  logForm(){
-    debugger
-    if(this.login === "hauck" && this.senha === "hauck"){
-      this.navCtrl.push(PaginaPage);
-    } else{
-      this.toast.presentToast("Usuário ou senha incorreta, verifique suas credenciais de acesso.");
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams, 
+    private alertCtrl: AlertController, 
+    private httpProvider : HttpProvider,
+    private message : Messages, 
+    private toast : Toast) { }
+
+    login(){
+      this.UserPass(this.user, this.pass).subscribe(
+        (_data : any) => {
+          this.navCtrl.setRoot(PizzaPage);
+        },
+        (error : any) => {
+          this.toast.presentToast("Usuário ou senha incorreta, verifique  suas credenciais de acesso");
+          console.log(error);
+        }
+      )
+    };
+
+    public UserPass(userName: string, password: string){
+      let obj =  {
+        userName : userName,
+        password : password,
+      };
+      this.httpProvider.url = 'http://104.196.102.231/logon';
+      return this.httpProvider.post(obj)
+    }
+    
+    presentAlert() {
+      let alert = this.alertCtrl.create({
+        title: 'Sucesso!',
+        subTitle: ` <b>${this.user}</b> Bem Vindo!`,
+        buttons: ['OK']
+      });
+      alert.present();
+    }
+    
+    showMessage(){
+      this.message.loadingShow();
+    }
+    exibirToast(){
+      this.toast.presentToast("Toast!");
     }
   }
-
-  presentAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'Sucesso!',
-      subTitle: ` <b>${this.login}</b> Seja bem vindo!`,
-      buttons: ['OK']
-    });
-    alert.present();
-  }
-showMessage(){
-    this.message.loadingShow();
-  }
-  
-  exibirToast(){
-    this.toast.presentToast("Toast");
-  }
-
-}

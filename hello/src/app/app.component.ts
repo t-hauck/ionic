@@ -23,10 +23,7 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-    ];
-
+    this.pages = [{ title: 'Home', component: HomePage },];
   }
 
   initializeApp() {

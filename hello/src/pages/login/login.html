@@ -1,29 +1,29 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content>
-  <form (ngSubmit)="logForm()">
+    <ion-navbar>
+      <ion-title>Login</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
     <ion-list>
+      <br>
+  
       <ion-item>
-        <ion-label color="primary" stacked>Usuário</ion-label>
-        <ion-input type="email" [(ngModel)]="login" name="nome" placeholder="Seu nome de usuário"></ion-input>
+        <ion-label floating>Seu nome de usuário</ion-label>
+        <ion-input type="text" [(ngModel)]="user"></ion-input>
       </ion-item>
+    
       <ion-item>
-        <ion-label color="primary" stacked>Senha</ion-label>
-        <ion-input type="password" [(ngModel)]="senha" name="senha" placeholder="Sua senha"></ion-input>
+        <ion-label floating>Sua senha</ion-label>
+        <ion-input type="password" [(ngModel)]="pass"></ion-input>
       </ion-item>
+    
     </ion-list>
-      <button ion-button primary (click)="logForm()">Entrar</button>
-      
-      <!--
-      <button ion-button primary (click)="showMessage()">Loading</button>
-      <button ion-button primary (click)="showToast()">Toast</button>
-    -->
-  </form>
+    <div padding>
+    <button ion-button color="dark" (click)="login()">Login</button>
+  </div>
+
+  <br>
+  <p>{{user}}</p>
+  <p>{{pass}}</p>
 </ion-content>
