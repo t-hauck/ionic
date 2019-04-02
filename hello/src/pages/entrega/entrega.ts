@@ -14,7 +14,7 @@ export class EntregaPage {
     public navParams: NavParams, 
     private httpProvider : HttpProvider) {
     this.addCidade();
-  }
+  } 
   public listaCidades = [];
   public listBairros = [];
   public TextField : boolean = false;
@@ -45,13 +45,13 @@ public PegarCidade(){
    this.listBairos();
  }
 
- public listBairos(){
+ public listBairos(){ ///////////////
    this.PegarBairro().subscribe(
      (resultado : any) =>{
        this.listBairros = resultado;
       }
       )
-    }
+    } //////////////////////////////
     
     public ClickText(){
       this.TextField = !this.TextField;

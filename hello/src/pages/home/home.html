@@ -9,6 +9,9 @@
 
 <ion-content padding>
     <br>
+
+    <ion-row>
+      <ion-col width-50 style="text-align: center">
   
   <button ion-button primary (click)="adicionarAlunos()">Carregar Alunos</button>
   <button ion-button primary (click)="buttonClick()">Esconder</button>
@@ -18,6 +21,9 @@
   <button ion-button primary (click)="exibirToast()">Mostrar Toast</button>
   <br>
   <button ion-button primary (click)="LoginPage()">Efetuar Login</button>
+
+</ion-col>
+</ion-row>
 
  <div *ngIf="exibirConteudo">
    <ion-list>
