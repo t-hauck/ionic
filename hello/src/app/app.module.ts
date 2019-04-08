@@ -48,7 +48,7 @@ import { LoginPage } from '../pages/login/login';
     Messages,
     Toast,
     HttpProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

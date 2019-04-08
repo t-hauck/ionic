@@ -8,43 +8,47 @@
   <ion-list>
       <ion-item>
         <ion-label>Cidade</ion-label>
-        <ion-select [(ngModel)]="city" (ionChange)="CityClick()">
+        <ion-select [(ngModel)]="city" (ionChange)="PegarCidade()">
           <ion-option value="{{city.id}}" *ngFor="let city of listaCidades">{{city.name}}</ion-option>
         </ion-select>
       </ion-item>
   </ion-list>
 
   <ion-list>
-        <ion-item>
+        <ion-item *ngIf="listaCidades">
           <ion-label>Bairro</ion-label>
-          <ion-select [(ngModel)]="neighborhood" (ionChange)="ClickText()">
-            <ion-option  *ngFor="let b of listaBairros">{{b.name}}</ion-option>
-          </ion-select>
+          <ion-select [(ngModel)]="listBairros"> <!-- (ionChange)="ClickText()"> !-->
+            <ion-option *ngFor="let neighborhood of listBairros">{{neighborhood.name}}</ion-option>
+          </ion-select> <!-- value="{{neighborhood.id}}" -->
         </ion-item>
   </ion-list>
-
-      <div padding *ngIf="TextField">
-      <ion-list >
+  
+  <ion-list *ngIf="ClickText">   <!-- PegarBairro -->
 
           <ion-item>
-            <ion-label fixed>Rua</ion-label>
-            <ion-input type="text" ></ion-input>
-          </ion-item>
+            <ion-label position="undefined">Rua</ion-label> 
+            <ion-input type="text" ></ion-input> <!-- position | undefined-floating-fixed-stacked -->
+          </ion-item> 
         
           <ion-item>
-            <ion-label fixed>Número</ion-label>
+            <ion-label undefined>Número</ion-label>
             <ion-input type="text"></ion-input>
           </ion-item>
+
           <ion-item>
-            <ion-label fixed>Complemento</ion-label>
+            <ion-label undefined>Complemento</ion-label>
             <ion-input type="text"></ion-input>
           </ion-item>
+
           <ion-item>
-              <ion-label fixed>Referência</ion-label>
+              <ion-label undefined>Referência</ion-label>
               <ion-input type="text"></ion-input>
           </ion-item>
-        
         </ion-list>
-        <button ion-button primary (click)="reset()">Apagar</button>
-      </div>
-</ion-content>
+
+        <ion-item>
+          <button ion-button (click)="reset()">Apagar Dados</button>
+          <button ion-button type="submit">Enviar Informações</button>
+        </ion-item>
+
+    </ion-content>
