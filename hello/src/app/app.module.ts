@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpModule } from '@angular/http'; // Http, Headers, Response
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -16,7 +16,6 @@ import { HttpProvider } from '../providers/http/http';
 import { PizzaPage } from '../pages/pizza/pizza';
 import { EntregaPage } from '../pages/entrega/entrega';
 import { LoginPage } from '../pages/login/login';
-// import { Http, Headers, Response } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,7 @@ import { LoginPage } from '../pages/login/login';
     HomePage,
     ListPage,
     PizzaPage,
-    EntregaPage, 
+    EntregaPage,
     LoginPage
   ],
   imports: [

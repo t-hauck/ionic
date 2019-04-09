@@ -8,7 +8,7 @@
   <ion-list>
       <ion-item>
         <ion-label>Cidade</ion-label>
-        <ion-select [(ngModel)]="city" (ionChange)="PegarCidade()">
+        <ion-select [(ngModel)]="city" (ionChange)="clickCity()"> <!-- [(ngModel)]="PegarCidade" -->
           <ion-option value="{{city.id}}" *ngFor="let city of listaCidades">{{city.name}}</ion-option>
         </ion-select>
       </ion-item>
@@ -17,19 +17,19 @@
   <ion-list>
         <ion-item *ngIf="listaCidades">
           <ion-label>Bairro</ion-label>
-          <ion-select [(ngModel)]="listBairros"> <!-- (ionChange)="ClickText()"> !-->
+          <ion-select [(ngModel)]="neighborhood" (ionChange)="ClickText()">
             <ion-option *ngFor="let neighborhood of listBairros">{{neighborhood.name}}</ion-option>
           </ion-select> <!-- value="{{neighborhood.id}}" -->
         </ion-item>
   </ion-list>
-  
+
   <ion-list *ngIf="ClickText">   <!-- PegarBairro -->
 
           <ion-item>
-            <ion-label position="undefined">Rua</ion-label> 
+            <ion-label position="undefined">Rua</ion-label>
             <ion-input type="text" ></ion-input> <!-- position | undefined-floating-fixed-stacked -->
-          </ion-item> 
-        
+          </ion-item>
+
           <ion-item>
             <ion-label undefined>Número</ion-label>
             <ion-input type="text"></ion-input>

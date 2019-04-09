@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Cardápio</ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,7 +14,7 @@
     <ion-list>
       <ion-item >
 
-        <ion-label>Tamanho</ion-label>
+        <ion-label>Tamanho da Pizza</ion-label>
           <ion-select  [(ngModel)]="idProduto" (ionChange)="click()">
             <ion-option value="{{tamanho.id}}" *ngFor="let tamanho of ListaTamanhos">{{tamanho.name}}</ion-option>
           </ion-select>

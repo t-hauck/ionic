@@ -10,20 +10,20 @@ import { HttpProvider } from '../../providers/http/http';
 export class EntregaPage {
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams, 
+    public navCtrl: NavController,
+    public navParams: NavParams,
     private httpProvider : HttpProvider) {
       this.PegarCidade();
     // this.addCidade();
-  } 
+  }
   public listaCidades : any;
   public listBairros : any;
-  public TextField : any; // : boolean = false;
-/*
-  public city = [];
-  public neighborhood = []; 
-*/
+  public TextField : boolean = false;
 
+  /*
+  public city : string;
+  public neighborhood : string;
+  */
   url = 'http://104.196.102.231/'
 /*
   public addCidade(){
@@ -34,10 +34,13 @@ export class EntregaPage {
       }
     )
   } */
-  
+
+  clickCity(){
+    this.PegarBairro();
+  }
   public PegarCidade(){
-    this.httpProvider.url = this.url + 'cidades'; 
-    
+    this.httpProvider.url = this.url + 'cidades';
+
     this.httpProvider.get().subscribe(
       (retorno : any) =>{
         this.listaCidades = retorno;
@@ -62,29 +65,28 @@ export class EntregaPage {
 }// return this.httpProvider.get();
 
 public ClickText(){
-  this.TextField = this.TextField; 
- } 
- 
- public reset(){ // PROBLEMAS AO LIMPAR OS CAMPOS DE TEXTO
-   this.TextField = [];
+  this.TextField = !this.TextField;
+ }
+
+ public reset(){
+   this.TextField = !this.TextField;
  }
 }
    /*
    this.city = null;
    this.listBairros = [];
-   this.TextField = !this.TextField; 
+   this.TextField = !this.TextField;
    this.PegarCidade();
    // this.addCidade();
-   
+
   }
 }
 
- 
  public listBairos(){
    this.PegarBairro().subscribe(
      (resultado : any) =>{
        this.listBairros = resultado;
       }
       )
- } 
+ }
 */

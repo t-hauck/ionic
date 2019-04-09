@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Messages} from '../../providers/messages';
-import { Toast } from '../../providers/toast'; 
+import { Toast } from '../../providers/toast';
 import { HttpProvider } from '../../providers/http/http';
 import { PizzaPage } from '../pizza/pizza';
 // import { HomePage} from '../home/home';
@@ -18,10 +18,10 @@ export class LoginPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams, 
-    private alertCtrl: AlertController, 
+    public navParams: NavParams,
+    private alertCtrl: AlertController,
     private httpProvider : HttpProvider,
-    private message : Messages, 
+    private message : Messages,
     private toast : Toast) { }
 
     login(){
@@ -30,7 +30,7 @@ export class LoginPage {
           this.navCtrl.setRoot(PizzaPage);
         },
         (error : any) => {
-          this.toast.presentToast("Usuário ou senha incorreta, verifique  suas credenciais de acesso");
+          this.toast.presentToast("Usuário ou senha incorreta!");
           console.log(error);
         }
       )
@@ -44,7 +44,7 @@ export class LoginPage {
       this.httpProvider.url = 'http://104.196.102.231/logon';
       return this.httpProvider.post(obj)
     }
-    
+
     presentAlert() {
       let alert = this.alertCtrl.create({
         title: 'Sucesso!',
@@ -53,12 +53,12 @@ export class LoginPage {
       });
       alert.present();
     }
-    
+
     showMessage(){
       this.message.loadingShow();
     }
     exibirToast(){
       this.toast.presentToast("Toast!");
     }
-    
+
   }
