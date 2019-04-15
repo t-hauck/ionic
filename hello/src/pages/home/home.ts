@@ -18,10 +18,9 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     private messages : Messages,
-    private toast: Toast ){} /*,
-    private PizzaPage : PizzaPage) {} */
+    private toast: Toast ){}
 
-  LoginPage(){ // public LoginPage(){
+  LoginPage(){ // public LoginPage
     this.navCtrl.push(LoginPage);
   }
 

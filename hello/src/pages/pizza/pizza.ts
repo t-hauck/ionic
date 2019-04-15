@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpProvider } from '../../providers/http/http';
 import { EntregaPage } from '../entrega/entrega';
-// import { Injectable } from '@angular/core';
 
 @IonicPage()
 @Component({
@@ -20,8 +19,8 @@ export class PizzaPage {
     public navCtrl: NavController, public navParams: NavParams,
     private httpProvider : HttpProvider)  {
       this.adicionarPizza(); }
-      
-      url = 'http://localhost:3000/'; // "http://104.196.102.231/";
+
+      url = 'http://localhost:3000/';
 
   public adicionarPizza(){
     this.tamanho().subscribe(
