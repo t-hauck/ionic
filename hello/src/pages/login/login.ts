@@ -41,7 +41,7 @@ export class LoginPage {
         userName : userName,
         password : password,
       };
-      this.httpProvider.url = 'http://104.196.102.231/logon';
+      this.httpProvider.url = 'http://localhost:3000/login'; // 'http://104.196.102.231/logon';
       return this.httpProvider.post(obj)
     }
 

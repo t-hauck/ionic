@@ -24,7 +24,7 @@ export class EntregaPage {
   public city : string;
   public neighborhood : string;
   */
-  url = 'http://104.196.102.231/'
+  url = 'http://localhost:3000/'; // 'http://104.196.102.231/'
 /*
   public addCidade(){
     this.PegarCidade().subscribe(
@@ -52,7 +52,7 @@ export class EntregaPage {
   }
 
  public PegarBairro(){
-  this.httpProvider.url = this.url + 'bairros' + this.listaCidades;
+  this.httpProvider.url = this.url + 'bairros/:idcidades' + this.listaCidades;
 
   this.httpProvider.get().subscribe(
     (retorno : any) =>{
