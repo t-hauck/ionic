@@ -20,13 +20,13 @@ app.get('/tamanhos', (req,res,next) =>{
                 "quantidade_sabores": 1
             },
             {
-                "id":1,
+                "id":2,
                 "name":"Média",
                 "quantidade_sabores": 2
 
             },
             {
-                "id":1,
+                "id":3,
                 "name":"Grande",
                 "quantidade_sabores": 3
             }
@@ -61,9 +61,7 @@ app.get('/sabores/:idsabor', (req,res,next) =>{
                 "sabor": "Brócolis",
                 "preco": 16
             }
-
-            )
-        }
+        )}
 
         if(req.params.idsabor == 2){
             sabor.push({
@@ -123,7 +121,7 @@ app.get('/sabores/:idsabor', (req,res,next) =>{
 });
 
 app.get('/cidades', (req,res,next)=>{
-    let cidade :any = [];
+    let cidade : any = [];
 
     cidade.push(
         {
