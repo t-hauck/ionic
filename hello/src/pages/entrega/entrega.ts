@@ -24,6 +24,7 @@ export class EntregaPage {
   clickCity(){
     this.PegarBairro();
   }
+
   public PegarCidade(){
     this.httpProvider.url = this.url + 'cidades';
 

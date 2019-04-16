@@ -58,7 +58,7 @@ app.get('/sabores/:idsabor', (req,res,next) =>{
 
             },
             {
-                "sabor": "Brocolis",
+                "sabor": "Brócolis",
                 "preco": 16
             }
 
@@ -85,12 +85,11 @@ app.get('/sabores/:idsabor', (req,res,next) =>{
 
             },
             {
-                "sabor": "Brocolis",
+                "sabor": "Brócolis",
                 "preco": 22
             }
-
-            )
-        }
+        )
+    }
 
         if(req.params.idsabor == 3){
             sabor.push({
@@ -112,7 +111,7 @@ app.get('/sabores/:idsabor', (req,res,next) =>{
 
             },
             {
-                "sabor": "Brocolis",
+                "sabor": "Brócolis",
                 "preco": 29
             }
 
@@ -122,8 +121,10 @@ app.get('/sabores/:idsabor', (req,res,next) =>{
         res.send(sabor)
     // })
 });
+
 app.get('/cidades', (req,res,next)=>{
     let cidade :any = [];
+
     cidade.push(
         {
             "id": 1,
@@ -141,8 +142,10 @@ app.get('/cidades', (req,res,next)=>{
 
     res.send(cidade)
 });
+
 app.get('/bairros/:idcidades', (req,res,next)=>{
     let bairro : any = [];
+
     if(req.params.idcidades == 1){
         bairro.push(
             {
@@ -150,7 +153,7 @@ app.get('/bairros/:idcidades', (req,res,next)=>{
                 "value": 1.5
             },
             {
-                "name": "Agua Verde",
+                "name": "Água Verde",
                 "value": 2.35
             },
             {
@@ -163,6 +166,7 @@ app.get('/bairros/:idcidades', (req,res,next)=>{
             }
             )
         }
+        
     if(req.params.idcidades == 2){
         bairro.push(
             {
@@ -179,6 +183,7 @@ app.get('/bairros/:idcidades', (req,res,next)=>{
             }
             )
         }
+
     if(req.params.idcidades == 3){
         bairro.push(
             {
