@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastro no sistema</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+      
+    <ion-list> <br>
+        <ion-item>
+          <ion-label floating>Usuário</ion-label>
+          <ion-input type="text" [(ngModel)]="newUser" name="Username"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="newPass"></ion-input>
+        </ion-item>
+      
+      </ion-list>
+      <br>
+      
+      <ion-row>
+        <ion-col width-50 style="text-align: center">
+          <button ion-button color="dark" type="button" (click)="CriarConta()">Criar conta</button>
+          <button ion-button color="dark" (click)="LoginPage()">Efetuar Login</button>
+          
+
+          <p><b>Novo Usuário</b> <br> {{newUser}}</p>
+          <p><b>Nova Senha</b><br> {{newPass}}</p>
+        
+        </ion-col>
+      </ion-row>
+    </ion-content>

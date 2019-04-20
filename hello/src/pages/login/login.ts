@@ -4,13 +4,14 @@ import { Messages} from '../../providers/messages';
 import { Toast } from '../../providers/toast';
 import { HttpProvider } from '../../providers/http/http';
 import { PizzaPage } from '../pizza/pizza';
+import { CadastroPage } from '../cadastro/cadastro';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  exibirConteudo : boolean = true;
+  // exibirConteudo : boolean = true;
   listNomes = [];
   user : string;
   pass : string;
@@ -22,6 +23,8 @@ export class LoginPage {
     private httpProvider : HttpProvider,
     private message : Messages,
     private toast : Toast) { }
+
+    url = "http://localhost:33333/"; // 'http://104.196.102.231/logon';
 
     login(){
       this.UserPass(this.user, this.pass).subscribe(
@@ -40,7 +43,7 @@ export class LoginPage {
         userName : userName,
         password : password,
       };
-      this.httpProvider.url = 'http://localhost:3000/login'; // 'http://104.196.102.231/logon';
+      this.httpProvider.url = this.url + 'login';
       return this.httpProvider.post(obj)
     }
 
@@ -58,5 +61,9 @@ export class LoginPage {
     }
     exibirToast(){
       this.toast.presentToast("Toast!");
+    }
+
+    PaginaNovaConta(){
+      this.navCtrl.push(CadastroPage);
     }
   }

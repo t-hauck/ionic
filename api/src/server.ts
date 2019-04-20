@@ -8,7 +8,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-const port: number = 3000;
+const port: number = 33333;
 
 app.get('/tamanhos', (req,res,next) =>{
     // res.send({
@@ -141,10 +141,10 @@ app.get('/cidades', (req,res,next)=>{
     res.send(cidade)
 });
 
-app.get('/bairros/:idcidades', (req,res,next)=>{
+app.get('/bairros/:idCidades', (req,res,next)=>{
     let bairro : any = [];
 
-    if(req.params.idcidades == 1){
+    if(req.params.idCidades == 1){
         bairro.push(
             {
                 "name": "Centro",
@@ -165,7 +165,7 @@ app.get('/bairros/:idcidades', (req,res,next)=>{
             )
         }
         
-    if(req.params.idcidades == 2){
+    if(req.params.idCidades == 2){
         bairro.push(
             {
                 "name": "Seminário",
@@ -182,7 +182,7 @@ app.get('/bairros/:idcidades', (req,res,next)=>{
             )
         }
 
-    if(req.params.idcidades == 3){
+    if(req.params.idCidades == 3){
         bairro.push(
             {
                 "name": "Amizade",
@@ -193,7 +193,7 @@ app.get('/bairros/:idcidades', (req,res,next)=>{
                 "value": 8
             },
             {
-                "name": "Avai",
+                "name": "Avaí",
                 "value": 7
             },
             {
@@ -216,10 +216,19 @@ app.post('/login', (req,res,next) =>{
         });
     }
     else{
-        res.status(401).send('Conta invalida!');
+        res.status(401).send('Nome de usuário ou senha inválida!');
     }
 })
 
+app.post('/cadastro', (req,res,next)=>{
+    let newUser = req.body.newUser;
+    let newPass = req.body.newPass;
+
+    console.log('');
+    console.log(newUser);
+    console.log(newPass); 
+    res.send({msg : "Usuário criado com sucesso!"});
+})
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}/`);
 })

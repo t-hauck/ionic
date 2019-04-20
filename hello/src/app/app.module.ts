@@ -13,9 +13,12 @@ import { Messages } from '../providers/messages';
 import { Toast } from '../providers/toast';
 
 import { HttpProvider } from '../providers/http/http';
-import { PizzaPage } from '../pages/pizza/pizza';
+import { EnderecoProvider } from '../providers/endereco/endereco';
+import { CadastroProvider } from '../providers/cadastro/cadastro';
+import { CadastroPage } from '../pages/cadastro/cadastro';
 import { EntregaPage } from '../pages/entrega/entrega';
 import { LoginPage } from '../pages/login/login';
+import { PizzaPage } from '../pages/pizza/pizza';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { LoginPage } from '../pages/login/login';
     ListPage,
     PizzaPage,
     EntregaPage,
-    LoginPage
+    LoginPage,
+    CadastroPage
   ],
   imports: [
     HttpModule,
@@ -39,7 +43,8 @@ import { LoginPage } from '../pages/login/login';
     ListPage,
     PizzaPage,
     EntregaPage,
-    LoginPage
+    LoginPage,
+    CadastroPage
   ],
   providers: [
     StatusBar,
@@ -47,7 +52,9 @@ import { LoginPage } from '../pages/login/login';
     Messages,
     Toast,
     HttpProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    CadastroProvider,
+    EnderecoProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}

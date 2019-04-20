@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpProvider } from '../../providers/http/http';
+import { EnderecoProvider } from './../../providers/endereco/endereco';
 
 @IonicPage()
 @Component({
@@ -12,17 +13,21 @@ export class EntregaPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private httpProvider : HttpProvider) {
+    private httpProvider : HttpProvider,
+    private EnderecoProvider : EnderecoProvider) {
       this.PegarCidade();
     }
-  public listaCidades : any;
-  public listBairros : any;
+  public city : string;
+  public neighborhood : string;
+  public listaCidades : any; // [];
+  public listBairros : any;  // [];
   public TextField : boolean = false;
 
-  url = 'http://localhost:3000/';
+  url = 'http://localhost:33333/';
+
 
   clickCity(){
-    this.PegarBairro();
+    this.PegarBairro();// listBairros();
   }
 
   public PegarCidade(){
@@ -39,15 +44,13 @@ export class EntregaPage {
   }
 
  public PegarBairro(){
-  this.httpProvider.url = this.url + 'bairros/:idcidades' + this.listaCidades;
-
-  this.httpProvider.get().subscribe(
-    (retorno : any) =>{
-      this.listBairros = retorno;
-    },
-    (error : any) => {
-      console.log(error)
-    }
+ this.EnderecoProvider.GetBairro(this.city).subscribe(
+   (retorno : any) => {
+     this.listBairros = retorno;
+   },
+   (error : any) => {
+    console.log(error)
+  }
   )
 }
 
@@ -56,6 +59,8 @@ public ClickText(){
  }
 
  public reset(){
+   this.city = null;
+   this.listBairros = [];
    this.TextField = !this.TextField;
  }
 }

@@ -4,7 +4,7 @@
     </ion-navbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content padding>
 
     <ion-list>
       <br>
@@ -24,13 +24,13 @@
 
     <ion-row>
       <ion-col width-50 style="text-align: center">
-        <div padding>
           <button ion-button color="dark" (click)="login()">Login</button>
-        </div>
+          <button ion-button color="dark" type="submit" (click)="PaginaNovaConta()">Criar conta</button>
 
-        <p><b>Usuário</b> <br> {{user}}</p>
-        <p><b>Senha</b><br> {{pass}}</p>
-      </ion-col>
-    </ion-row>
-
+      
+      <p><b>Usuário</b> <br> {{user}} </p>
+      <p><b>Senha</b><br> {{pass}} </p>
+      
+    </ion-col>
+  </ion-row>
 </ion-content>

@@ -20,7 +20,7 @@ export class PizzaPage {
     private httpProvider : HttpProvider)  {
       this.adicionarPizza(); }
 
-      url = 'http://localhost:3000/';
+      url = 'http://localhost:33333/';
 
   public adicionarPizza(){
     this.tamanho().subscribe(
