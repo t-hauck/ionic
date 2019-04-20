@@ -25,9 +25,8 @@ export class EntregaPage {
 
   url = 'http://localhost:33333/';
 
-
   clickCity(){
-    this.PegarBairro();// listBairros();
+    this.PegarBairro();
   }
 
   public PegarCidade(){

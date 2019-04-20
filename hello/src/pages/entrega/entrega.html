@@ -8,7 +8,7 @@
   <ion-list>
       <ion-item>
         <ion-label>Cidade</ion-label>
-        <ion-select [(ngModel)]="city" (ionChange)="clickCity()"> <!-- Change)="clickCity()" -->
+        <ion-select [(ngModel)]="city" (ionChange)="clickCity()">
           <ion-option value="{{city.id}}" *ngFor="let city of listaCidades">{{city.name}}</ion-option>
         </ion-select>
       </ion-item>
@@ -20,7 +20,7 @@
           <ion-label>Bairro</ion-label>
           <ion-select [(ngModel)]="neighborhood" (ionChange)="ClickText()">
             <ion-option *ngFor="let n of listBairros">{{n.name}}</ion-option>
-          </ion-select> <!-- value="{{neighborhood.id}}" -->
+          </ion-select>
         </ion-item>
   </ion-list>
 

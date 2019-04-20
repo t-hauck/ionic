@@ -27,10 +27,6 @@ export class CadastroPage {
     private cadastro : CadastroProvider) {
   }
 
-  /* ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroPage');
-  } */
-  
   CriarConta(){
     if(this.newUser !== "" && this.newPass !== "" ){
 
@@ -40,7 +36,7 @@ export class CadastroPage {
       },
       (error : any )=>{
         console.log(error);
-        this.toast.presentToast("Conta ja existente");
+        this.toast.presentToast("Conta já existente!");
       }
     )
     }
