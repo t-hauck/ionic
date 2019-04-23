@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class HttpURL {
 
-  constructor() {}
+export class URL {
+  private url : string;
 
-  public url (){ // 'http://104.196.102.231/logon';
-    const HttpUrl : string = "http://localhost:33333/";
+  constructor() {
+    this.url = "http://localhost:33333/";
+  }         // "http://104.196.102.231/";
+
+  public link(url){
+    this.url;
   }
 
 }

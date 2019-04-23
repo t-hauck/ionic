@@ -43,7 +43,7 @@ export class LoginPage {
         userName : userName,
         password : password,
       };
-      this.httpProvider.url = this.url + 'login';
+      this.httpProvider.url = this.url + 'logon';
       return this.httpProvider.post(obj)
     }
 

@@ -12,7 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Messages } from '../providers/messages';
 import { Toast } from '../providers/toast';
 
-import { HttpURL } from '../providers/http-url/url';
+import { URL } from '../providers/http-url/url';
 import { HttpProvider } from '../providers/http/http';
 import { EnderecoProvider } from '../providers/endereco/endereco';
 import { CadastroProvider } from '../providers/cadastro/cadastro';
@@ -55,7 +55,7 @@ import { PizzaPage } from '../pages/pizza/pizza';
     HttpProvider,
     CadastroProvider,
     EnderecoProvider,
-    HttpURL,
+    URL,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
