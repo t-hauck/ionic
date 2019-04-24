@@ -4,13 +4,6 @@ import { Toast } from '../../providers/toast';
 import { CadastroProvider } from '../../providers/cadastro/cadastro';
 import { LoginPage } from '../login/login';
 
-/**
- * Generated class for the CadastroPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-cadastro',
@@ -21,7 +14,7 @@ export class CadastroPage {
   newPass : string;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     private toast : Toast,
     private cadastro : CadastroProvider) {

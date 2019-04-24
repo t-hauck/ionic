@@ -17,7 +17,7 @@ export class CadastroProvider {
       newPass : newPass
     }
 
-    this.httpProvider.url = this.link + 'cadastro'; // this.url + 'cadastro';
+    this.httpProvider.url = this.link + 'usuario'; // 'cadastro';
     return this.httpProvider.post(obj);
   }
 }

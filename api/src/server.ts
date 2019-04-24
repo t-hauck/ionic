@@ -14,23 +14,23 @@ const port: number = 33333;
 
 app.get('/tamanhos', (req,res,next) =>{
 
-        let tamanho : any = [];
-        let tamanhoSQL : string = 'select * from tamanhos'
+        let tamanhos : any = [];
+        let tamanhosSQL : string = 'select * from tamanhos'
 
-        new MySQLFactory().getConnection().select(tamanhoSQL).subscribe(
+        new MySQLFactory().getConnection().select(tamanhosSQL).subscribe(
             (data : any) => {
 
                 data.forEach((element : any) => {
                     console.log
             
-                    tamanho.push({
+                    tamanhos.push({
                         id : element.idTamanhos,
                         name : element.name,
                         quantidade_sabores : element.quantidade_sabores
                     })
                 });
 
-                res.send(tamanho)
+                res.send(tamanhos)
             },
 
             (error : any) =>{
@@ -134,8 +134,8 @@ app.post('/logon', (req,res,next) =>{
                 userName : req.body.userName,
                 password : req.body.password
             });
-            
         },
+        
         (error : any) =>{
             console.log(error);
             res.send(error);
