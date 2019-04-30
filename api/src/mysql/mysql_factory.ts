@@ -6,5 +6,5 @@ export class MySQLFactory {
 
     public getConnection(): any{
         return new MySQL('localhost','root','','restapi');
-    } // url, usuário, senha, nome do banco de dados
+    }// url, usuário, senha, nome do banco de dados
 }
