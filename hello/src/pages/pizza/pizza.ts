@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpProvider } from '../../providers/http/http';
 import { EntregaPage } from '../entrega/entrega';
+import { CadastroSaborPage } from '../cadastro-sabor/cadastro-sabor';
 
 @IonicPage()
 @Component({
@@ -51,6 +52,10 @@ export class PizzaPage {
   public sabores(IdSabor : string){
     this.httpProvider.url = this.url + 'sabor/' + IdSabor;
     return this.httpProvider.get();
+  }
+
+  public newSabor() {
+    this.navCtrl.push(CadastroSaborPage);
   }
 
   public dadosEntrega() {

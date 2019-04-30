@@ -1,8 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastro de sabores</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content padding>
   <ion-list>
     <ion-item >
-      <ion-label>Selecione Tamanho da Pizza</ion-label>
+      <ion-label>Tamanho da pizza</ion-label>
         <ion-select  [(ngModel)]="idProduto">
           <ion-option value="{{t.id}}" *ngFor="let t of listaTamanhos">{{t.name}}</ion-option>
         </ion-select>
@@ -19,7 +24,7 @@
         <ion-label fixed>Preço</ion-label>
         <ion-input type="number" [(ngModel)]="preco" name="preco"></ion-input>
     </ion-item>
-
+  
   </ion-list>
-  <button ion-button color="secondary" type="button" (click)="saborCadastroForm()" block>Cadastro</button>
+  <button ion-button color="dark" type="button" (click)="saborCadastroForm()" block>Finalizar cadastro</button>
 </ion-content>

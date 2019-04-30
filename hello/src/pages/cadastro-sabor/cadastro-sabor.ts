@@ -24,10 +24,10 @@ export class CadastroSaborPage {
     this.tamanhosPizza();
   }
 
-  url = "http://localhost:33333/tamanho/";
+  url = "http://localhost:33333/";
 
   public tamanhos (){
-      this.httpProvider.url = this.url;
+      this.httpProvider.url = this.url + 'tamanho';
       return this.httpProvider.get();
   }
 
@@ -41,7 +41,7 @@ export class CadastroSaborPage {
 
 saborCadastroForm(){
   if(this.sabor !== "" && this.preco !== 0 && this.idProduto !== ""){
-     this.CadastroProvider.NovoSabor(this.sabor,this.preco,this.idProduto).subscribe(
+     this.NovoSabor(this.sabor,this.preco,this.idProduto).subscribe(
        (resposta : any) =>{
         this.toast.presentToast(resposta.msg);
        },
@@ -53,4 +53,18 @@ saborCadastroForm(){
   }
 }
 
-}
+//export class ProdutoCadastro{
+
+  public NovoSabor(sabor : string, preco : number, idProduto : string){
+
+          let obj = {
+              sabor:sabor,
+              preco:preco,
+              tamanhos_idTamanhos: idProduto
+            }
+            
+            console.log(obj);
+            this.httpProvider.url = this.url + 'cadastrosabor' ;
+            return this.httpProvider.post(obj);
+          }
+        }
