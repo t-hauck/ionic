@@ -44,12 +44,12 @@ export class PizzaPage {
   }
 
   public tamanho (){
-      this.httpProvider.url = this.url + 'tamanhos';
+      this.httpProvider.url = this.url + 'tamanho';
       return this.httpProvider.get();
   }
 
   public sabores(IdSabor : string){
-    this.httpProvider.url = this.url + 'sabores/' + IdSabor;
+    this.httpProvider.url = this.url + 'sabor/' + IdSabor;
     return this.httpProvider.get();
   }
 

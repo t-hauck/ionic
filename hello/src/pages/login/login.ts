@@ -24,7 +24,7 @@ export class LoginPage {
     private message : Messages,
     private toast : Toast) { }
 
-    url = "http://localhost:33333/";
+    url = "http://localhost:33333/"; // 'http://104.196.102.231/logon';
 
     login(){
       this.UserPass(this.user, this.pass).subscribe(
@@ -43,7 +43,7 @@ export class LoginPage {
         userName : userName,
         password : password,
       };
-      this.httpProvider.url = this.url + 'logon';
+      this.httpProvider.url = this.url + 'login';
       return this.httpProvider.post(obj)
     }
 

@@ -3,7 +3,8 @@ import { NavController } from 'ionic-angular';
 import { Messages } from '../../providers/messages';
 import { Toast } from '../../providers/toast';
 import { PizzaPage } from '../pizza/pizza';
-import { LoginPage} from '../login/login';
+import { LoginPage } from '../login/login';
+import { CadastroSaborPage } from '../cadastro-sabor/cadastro-sabor';
 
 @Component({
   selector: 'page-home',
@@ -18,10 +19,15 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     private messages : Messages,
-    private toast: Toast ){}
+    private toast: Toast,
+    private CadastroSaborPage : CadastroSaborPage){}
 
   LoginPage(){ // public LoginPage
     this.navCtrl.push(LoginPage);
+  }
+
+  public newSabor() {
+    this.navCtrl.push(CadastroSaborPage);
   }
 
   public pizzaria() {

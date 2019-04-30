@@ -14,7 +14,7 @@ export class CadastroPage {
   newPass : string;
 
   constructor(
-    public navCtrl: NavController,
+    public navCtrl: NavController, 
     public navParams: NavParams,
     private toast : Toast,
     private cadastro : CadastroProvider) {
@@ -27,8 +27,8 @@ export class CadastroPage {
       (resposta : any)=>{
         this.toast.presentToast(resposta.msg);
       },
-      (error : any )=>{
-        console.log(error);
+      (error : any ) => {
+        console.log("",error);
         this.toast.presentToast("Conta já existente!");
       }
     )

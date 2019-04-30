@@ -30,7 +30,7 @@ export class EntregaPage {
   }
 
   public PegarCidade(){
-    this.httpProvider.url = this.url + 'cidades';
+    this.httpProvider.url = this.url + 'cidade';
 
     this.httpProvider.get().subscribe(
       (retorno : any) =>{

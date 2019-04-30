@@ -17,6 +17,7 @@ import { HttpProvider } from '../providers/http/http';
 import { EnderecoProvider } from '../providers/endereco/endereco';
 import { CadastroProvider } from '../providers/cadastro/cadastro';
 import { CadastroPage } from '../pages/cadastro/cadastro';
+import { CadastroSaborPage } from '../pages/cadastro-sabor/cadastro-sabor';
 import { EntregaPage } from '../pages/entrega/entrega';
 import { LoginPage } from '../pages/login/login';
 import { PizzaPage } from '../pages/pizza/pizza';
@@ -29,7 +30,8 @@ import { PizzaPage } from '../pages/pizza/pizza';
     PizzaPage,
     EntregaPage,
     LoginPage,
-    CadastroPage
+    CadastroPage,
+    CadastroSaborPage
   ],
   imports: [
     HttpModule,
@@ -45,7 +47,8 @@ import { PizzaPage } from '../pages/pizza/pizza';
     PizzaPage,
     EntregaPage,
     LoginPage,
-    CadastroPage
+    CadastroPage,
+    CadastroSaborPage
   ],
   providers: [
     StatusBar,
